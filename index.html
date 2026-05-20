@@ -533,102 +533,9 @@ section+section{border-top:1px solid var(--gray-mid)}
   <div class="content-wrap">
     <section>
 
-      <div class="member-group">
-        <div class="member-group-title">Core Team</div>
-        <div class="member-grid">
-          <div class="member-card">
-            <div class="m-name">Andrew Schwartz</div>
-            <div class="m-role">Core Team Lead</div>
-            <div class="m-affil">Acton-Boxborough School Committee</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Liz</div>
-            <div class="m-role">Core Team</div>
-            <div class="m-affil">Common Thread Initiative</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Jen</div>
-            <div class="m-role">Core Team</div>
-            <div class="m-affil">Common Thread Initiative</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="member-group">
-        <div class="member-group-title">Review Team — School Representatives</div>
-        <div class="member-grid">
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">PTO Representative</div>
-            <div class="m-affil">Boardwalk School PTO</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">PTO Representative</div>
-            <div class="m-affil">Parker-Damon PTO</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">PTO Representative</div>
-            <div class="m-affil">Blanchard Memorial PTO</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">PTO Representative</div>
-            <div class="m-affil">Conant School PTO</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">PTO Representative</div>
-            <div class="m-affil">Douglas School PTO</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">PTO Representative</div>
-            <div class="m-affil">Gates School PTO</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">PTO Representative</div>
-            <div class="m-affil">Merriam School PTO</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">PTO Representative</div>
-            <div class="m-affil">McCarthy-Towne PTO</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="member-group">
-        <div class="member-group-title">Review Team — Community Representatives</div>
-        <div class="member-grid">
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">Representative</div>
-            <div class="m-affil">AB SEPAC</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">Representative</div>
-            <div class="m-affil">Multilingual Families</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">Representative</div>
-            <div class="m-affil">Cultural Groups</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">Teacher Representative</div>
-            <div class="m-affil">AB Teaching Staff</div>
-          </div>
-          <div class="member-card">
-            <div class="m-name">Open Position</div>
-            <div class="m-role">Administrator Representative</div>
-            <div class="m-affil">ABRSD Administration</div>
-          </div>
-        </div>
+      <div id="members-container">
+        <!-- Populated dynamically by GitHubUpdater from the Members sheet tab -->
+        <!-- PLACEHOLDER_MEMBERS -->
       </div>
 
       <div class="banner-cta">
@@ -741,7 +648,7 @@ section+section{border-top:1px solid var(--gray-mid)}
       <h2 class="sec-title">All Meeting Records</h2>
       <p class="sec-intro">Meeting minutes are published following each session and stored in our shared Google Drive folder. All documents are publicly accessible.</p>
 
-      <a href="https://drive.google.com/drive/folders/1oD8y7KeVssQ6PxpCcYtRwGu0bUjItMyC?usp=sharing" target="_blank" class="btn btn-navy" style="margin-bottom:32px;display:inline-flex">
+      <a href="YOUR_DRIVE_FOLDER_URL" target="_blank" class="btn btn-navy" style="margin-bottom:32px;display:inline-flex">
         📁 Open full Drive folder →
       </a>
 
@@ -900,7 +807,7 @@ section+section{border-top:1px solid var(--gray-mid)}
             <option value="Rejected">Rejected</option>
           </select>
           <button onclick="loadDashboardData()" class="btn btn-ghost" style="font-size:12px;padding:7px 14px">↻ Refresh</button>
-          <a href="https://docs.google.com/spreadsheets/d/1vFmJ-Cc_pQ20t78BAojdJPrgBz6ZXJvLbUhxRwZVcLg/edit?usp=sharing" target="_blank" class="btn btn-navy" style="font-size:12px;padding:7px 14px">Open Sheet →</a>
+          <a href="YOUR_SHEET_URL" target="_blank" class="btn btn-navy" style="font-size:12px;padding:7px 14px">Open Sheet →</a>
         </div>
       </div>
 
@@ -981,19 +888,9 @@ window.addEventListener('load', function() {
 // CATALOG — Populated by GitHubUpdater script
 // ══════════════════════════════════════════════════════════════
 var APPROVED_ACTIVITIES = [
-  {
-    name: "Trunk or Treat",
-    schools: "Douglas (Acton)",
-    format: "All-school event",
-    gradeLevels: "All grades",
-    timing: "Weekend",
-    cost: "Free",
-    description: "A Halloween related activity where families decorate their cars in the school parking lot, students from across the school, nearby neighborhoods or elsewhere attend in their Halloween costumes and go from car to car playing games and collecting candy ",
-    howToRun: "Define a planning group. \nSet a date. \nDefine the roles and responsibilities for the event. \nRoles: music, candy, decorations, parking, communication, event supervision, photographer\nCoordinate with the school on date/time\nSet a Theme if necessary\nSend information home to students\nPost on School facebook pages\nBuy candy for participants \nDay of : \nSet parking spaces\nChalk each parking space with a number\nHelp the cars that participating to park in their correct space\nDistribute candy to each of the cars\nHave the kids enjoy the event\nHold a vote for which car had the best decorations\nAnnounce the winner of the contest for best decorations\nCleanup the event\nPost pictures and publicly thank everyone\n\n",
-    contacts: "This has been a PTO run event with event-specific volunteers",
-    docUrl: "https://docs.google.com/document/d/1QbzTB35WoLTlluUR5ALvjpyskReLNDMN_Xa8iU6FDYI/edit?usp=drivesdk",
-    pdfUrl: "https://drive.google.com/file/d/1D_hZ6-AAP1FbjZmX--mGBCMjEl6zR-Fh/view?usp=drivesdk"
-  }
+  // This array is populated automatically by the GitHubUpdater Apps Script.
+  // Format: { name, schools, format, gradeLevels, timing, cost, description, docUrl, pdfUrl }
+  // PLACEHOLDER_ACTIVITIES
 ];
 
 var CATEGORIES = [
@@ -1062,9 +959,9 @@ function buildCatalog() {
 // ══════════════════════════════════════════════════════════════
 // FORM HANDLERS — replace URLs with real Google Form prefill URLs
 // ══════════════════════════════════════════════════════════════
-var QUICK_SUBMIT_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdG1qF5EVz1GgVybASXc6Gns0Vblr6qGWQv_k0XmrfhLr_uGg/viewform';
-var JOIN_FORM_URL    = 'https://docs.google.com/forms/d/e/1FAIpQLSdnmNWblMOZy7gg3tTgRTJyEOHwbUTFeeWpNhhU_ygqiFKm1Q/viewform';
-var CONTACT_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfE5Bf_9siQP86EteX3tprxYt6fl3Xtn67fk2TWW_8i3rUZmw/viewform';
+var QUICK_SUBMIT_URL = 'YOUR_QUICK_SUBMIT_FORM_URL';
+var JOIN_FORM_URL    = 'YOUR_JOIN_FORM_URL';
+var CONTACT_FORM_URL = 'YOUR_CONTACT_FORM_URL';
 
 function submitQuickForm() {
   var name  = document.getElementById('sf-name').value.trim();
@@ -1148,7 +1045,7 @@ function submitContactForm() {
 // Update YOUR_SHEET_CSV_URL with a published CSV from your Sheet
 // In Google Sheets: File > Share > Publish to web > CSV > All Submissions tab
 // ══════════════════════════════════════════════════════════════
-var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRD6iXlDUkOqq14ITh8Ics7Lq2ZX0Ih6cw4VB9OeM9dOL1TWGGn2Yb1O1SFWIJ3-nMIgmOaMgxs0owM/pub?gid=368541799&single=true&output=csv';
+var SHEET_CSV_URL = 'YOUR_SHEET_CSV_URL';
 var dashData = [];
 
 function loadDashboardData() {
