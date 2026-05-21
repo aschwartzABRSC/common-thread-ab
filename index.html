@@ -224,8 +224,8 @@ section+section{border-top:1px solid var(--gray-mid)}
 
 <!-- ══ HEADER ══ -->
 <header class="site-header">
-  <a class="header-brand" onclick="showPage(&#39;home&#39;)">
-    <div class="header-logo">AB</div>
+  <a class="header-brand" onclick="showPage('home')">
+    <img src="abrsd.png" alt="AB" style="width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0">
     <div class="header-title">
       <span class="initiative">Common Thread</span>
       <span class="district">Acton-Boxborough Regional School District</span>
@@ -591,64 +591,66 @@ section+section{border-top:1px solid var(--gray-mid)}
   <div class="content-wrap">
     <section>
       <div style="max-width:600px">
-        <p class="sec-intro">The Review Team meets monthly and plays a key role in expanding and evaluating submitted activities. We're looking for representatives from every AB school community — especially PTO members, teachers, and community leaders.</p>
-
-        <div class="callout">
-          <h3>What's involved?</h3>
-          <ul>
-            <li>Monthly review meetings (virtual or in-person)</li>
-            <li>Reviewing and expanding submitted activity ideas</li>
-            <li>Sharing your expertise and school community knowledge</li>
-            <li>Approximately 2–3 hours per month commitment</li>
-          </ul>
-        </div>
-
-        <div id="join-form-wrap" style="margin-top:28px">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Your name <span class="req">*</span></label>
-              <input type="text" id="jf-name" placeholder="First and last name">
-            </div>
-            <div class="form-group">
-              <label>Your email <span class="req">*</span></label>
-              <input type="email" id="jf-email" placeholder="you@example.com">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>School affiliation <span class="req">*</span></label>
-            <select id="jf-school">
-              <option value="">Select a school…</option>
-              <option>Blanchard Memorial (Boxborough)</option>
-              <option>Boardwalk School (Acton)</option>
-              <option>Parker-Damon School (Acton)</option>
-              <option>R.J. Grey Junior High</option>
-              <option>Acton-Boxborough Regional High School</option>
-              <option>District-wide / No specific school</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Your role in the community <span class="req">*</span></label>
-            <select id="jf-role">
-              <option value="">Select a role…</option>
-              <option>Parent / Caregiver</option>
-              <option>PTO / PTSO member</option>
-              <option>Teacher</option>
-              <option>School administrator</option>
-              <option>District staff</option>
-              <option>Community member</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Why do you want to join Common Thread? <span class="req">*</span></label>
-            <textarea id="jf-why" placeholder="Tell us a bit about your interest and what you&#39;d bring to the Review Team…"></textarea>
-          </div>
-          <p id="jf-error" style="color:#e53935;font-size:13px;margin-bottom:12px;display:none"></p>
-          <button class="btn btn-green" onclick="submitJoinForm()" style="width:100%;justify-content:center;padding:14px;font-size:15px">Submit My Application →</button>
-        </div>
-
-        <div class="form-success" id="jf-success">
+        <div class="form-success" id="jf-success" style="display:none;margin-bottom:24px">
           <h3>✅ Application received!</h3>
           <p>Thank you for your interest in joining Common Thread. The Core Team will be in touch within two weeks.</p>
+        </div>
+
+        <div id="join-form-wrap">
+          <p class="sec-intro" style="margin-bottom:20px">The Review Team meets monthly and plays a key role in expanding and evaluating submitted activities. We're looking for representatives from every AB school community — especially PTO members, teachers, and community leaders.</p>
+
+          <div class="callout">
+            <h3>What's involved?</h3>
+            <ul>
+              <li>Monthly review meetings (virtual or in-person)</li>
+              <li>Reviewing and expanding submitted activity ideas</li>
+              <li>Sharing your expertise and school community knowledge</li>
+              <li>Approximately 2–3 hours per month commitment</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:28px">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your name <span class="req">*</span></label>
+                <input type="text" id="jf-name" placeholder="First and last name">
+              </div>
+              <div class="form-group">
+                <label>Your email <span class="req">*</span></label>
+                <input type="email" id="jf-email" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>School affiliation <span class="req">*</span></label>
+              <select id="jf-school">
+                <option value="">Select a school…</option>
+                <option>Blanchard Memorial (Boxborough)</option>
+                <option>Boardwalk School (Acton)</option>
+                <option>Parker-Damon School (Acton)</option>
+                <option>R.J. Grey Junior High</option>
+                <option>Acton-Boxborough Regional High School</option>
+                <option>District-wide / No specific school</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Your role in the community <span class="req">*</span></label>
+              <select id="jf-role">
+                <option value="">Select a role…</option>
+                <option>Parent / Caregiver</option>
+                <option>PTO / PTSO member</option>
+                <option>Teacher</option>
+                <option>School administrator</option>
+                <option>District staff</option>
+                <option>Community member</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Why do you want to join Common Thread? <span class="req">*</span></label>
+              <textarea id="jf-why" placeholder="Tell us a bit about your interest and what you'd bring to the Review Team…"></textarea>
+            </div>
+            <p id="jf-error" style="color:#e53935;font-size:13px;margin-bottom:12px;display:none"></p>
+            <button class="btn btn-green" onclick="submitJoinForm()" style="width:100%;justify-content:center;padding:14px;font-size:15px">Submit My Application →</button>
+          </div>
         </div>
       </div>
     </section>
@@ -899,6 +901,23 @@ function showPage(name) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if (name === 'catalog') buildCatalog();
   if (name === 'dashboard') loadDashboardData();
+
+  // Reset forms when navigating to them so success messages don't persist
+  if (name === 'join') {
+    document.getElementById('join-form-wrap').style.display = 'block';
+    document.getElementById('jf-success').style.display = 'none';
+    document.getElementById('jf-error').style.display = 'none';
+  }
+  if (name === 'submit') {
+    document.getElementById('submit-form-wrap').style.display = 'block';
+    document.getElementById('sf-success').style.display = 'none';
+    document.getElementById('sf-error').style.display = 'none';
+  }
+  if (name === 'contact') {
+    document.getElementById('contact-form-wrap').style.display = 'block';
+    document.getElementById('cf-success').style.display = 'none';
+    document.getElementById('cf-error').style.display = 'none';
+  }
   return false;
 }
 
@@ -1067,8 +1086,6 @@ function submitJoinForm() {
   document.getElementById('join-form-wrap').style.display = 'none';
   document.getElementById('jf-success').style.display = 'block';
 }
-
-function submitContactForm() {
   var name    = document.getElementById('cf-name').value.trim();
   var email   = document.getElementById('cf-email').value.trim();
   var subject = document.getElementById('cf-subject').value;
