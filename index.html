@@ -1014,19 +1014,25 @@ function submitQuickForm() {
     err.style.display = 'block'; return;
   }
   err.style.display = 'none';
-  // Open Google Form prefilled in new tab
   var school = document.getElementById('sf-school').value;
   var role   = document.getElementById('sf-role').value;
   var extra  = document.getElementById('sf-extra').value.trim();
-  var url = QUICK_SUBMIT_URL + '?usp=pp_url' +
-    '&entry.NAME=' + encodeURIComponent(name) +
-    '&entry.EMAIL=' + encodeURIComponent(email) +
-    '&entry.IDEA=' + encodeURIComponent(idea) +
-    '&entry.DESC=' + encodeURIComponent(desc) +
-    '&entry.SCHOOL=' + encodeURIComponent(school) +
-    '&entry.ROLE=' + encodeURIComponent(role) +
-    '&entry.EXTRA=' + encodeURIComponent(extra);
-  window.open(url, '_blank');
+
+  // Silent POST to Google Forms — no redirect, no new tab
+  var formData = new FormData();
+  formData.append('entry.378498888',   name);
+  formData.append('entry.539345980',   email);
+  formData.append('entry.2058940213',  idea);
+  formData.append('entry.709309062',   desc);
+  formData.append('entry.988096260',   school);
+  formData.append('entry.2131462685',  role);
+
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSdG1qF5EVz1GgVybASXc6Gns0Vblr6qGWQv_k0XmrfhLr_uGg/formResponse', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+  });
+
   document.getElementById('submit-form-wrap').style.display = 'none';
   document.getElementById('sf-success').style.display = 'block';
 }
@@ -1073,12 +1079,20 @@ function submitContactForm() {
     err.style.display = 'block'; return;
   }
   err.style.display = 'none';
-  var url = CONTACT_FORM_URL + '?usp=pp_url' +
-    '&entry.NAME=' + encodeURIComponent(name) +
-    '&entry.EMAIL=' + encodeURIComponent(email) +
-    '&entry.SUBJECT=' + encodeURIComponent(subject) +
-    '&entry.MESSAGE=' + encodeURIComponent(message);
-  window.open(url, '_blank');
+
+  // Silent POST to Google Forms — no redirect, no new tab
+  var formData = new FormData();
+  formData.append('entry.1020664144', name);
+  formData.append('entry.10074585',   email);
+  formData.append('entry.1351788342', subject);
+  formData.append('entry.1903482707', message);
+
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSfE5Bf_9siQP86EteX3tprxYt6fl3Xtn67fk2TWW_8i3rUZmw/formResponse', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+  });
+
   document.getElementById('contact-form-wrap').style.display = 'none';
   document.getElementById('cf-success').style.display = 'block';
 }
