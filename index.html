@@ -1069,22 +1069,18 @@ function postToWebApp(payload, successId, formWrapId, errorId) {
   btn.disabled = true;
   btn.textContent = 'Submitting…';
 
+  // Apps Script Web Apps require no-cors mode from external origins.
+  // We show success optimistically since no-cors prevents reading the response.
   fetch(WEBAPP_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain' },
     body: JSON.stringify(payload)
   })
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    if (data.success) {
-      document.getElementById(formWrapId).style.display = 'none';
-      document.getElementById(successId).style.display = 'block';
-    } else {
-      document.getElementById(errorId).textContent = 'Something went wrong. Please try again.';
-      document.getElementById(errorId).style.display = 'block';
-      btn.disabled = false;
-      btn.textContent = 'Try again →';
-    }
+  .then(function() {
+    // no-cors returns opaque response — treat as success
+    document.getElementById(formWrapId).style.display = 'none';
+    document.getElementById(successId).style.display = 'block';
   })
   .catch(function() {
     document.getElementById(errorId).textContent = 'Could not connect. Please check your internet connection and try again.';
