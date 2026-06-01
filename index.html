@@ -532,7 +532,31 @@ section+section{border-top:1px solid var(--gray-mid)}
     <section>
 
       <div id="members-container">
-        <!-- PLACEHOLDER_MEMBERS -->
+        <div class="member-group">
+  <div class="member-group-title">Core Team</div>
+  <div class="member-grid">
+    <div class="member-card">
+      <div class="m-name">Andrew Schwartz</div>
+      <div class="m-role">Co-Chair</div>
+      <div class="m-affil">ABRSD School Committee</div>
+    </div>
+    <div class="member-card">
+      <div class="m-name">Liz Fowlks</div>
+      <div class="m-role">Co-Chair</div>
+      <div class="m-affil">ABRSD School Committee</div>
+    </div>
+    <div class="member-card">
+      <div class="m-name">Jennifer Faber</div>
+      <div class="m-role">District Sponsor</div>
+      <div class="m-affil">ABRSD Director of Access and Engagement</div>
+    </div>
+  </div>
+</div>
+<div class="banner-cta">
+  <div><h3>Interested in joining?</h3><p>We welcome representatives from every AB school community. Roles are open and participation is flexible.</p></div>
+  <a onclick="showPage('join')" class="btn btn-gold">Apply to Join →</a>
+</div>
+<!-- PLACEHOLDER_MEMBERS -->
 <div class="member-group">
   <div class="member-group-title">Core Team</div>
   <div class="member-grid">
@@ -960,10 +984,7 @@ window.addEventListener('load', function() {
 // ══════════════════════════════════════════════════════════════
 // CATALOG — Populated by GitHubUpdater script
 // ══════════════════════════════════════════════════════════════
-var APPROVED_ACTIVITIES = [
-  // Populated automatically by the GitHubUpdater Apps Script
-  // PLACEHOLDER_ACTIVITIES
-];
+var APPROVED_ACTIVITIES = [];
 
 var CATEGORIES = [
   { key: 'Club or recurring group',           label: 'Clubs & Recurring Groups',            icon: '🎭' },
