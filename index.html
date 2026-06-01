@@ -654,16 +654,16 @@ section+section{border-top:1px solid var(--gray-mid)}
             <div class="form-group">
               <label>Areas of expertise or interest <span style="font-weight:400;color:#888">(select all that apply)</span></label>
               <p class="form-hint" style="margin-bottom:10px">These help us match you with the right working group.</p>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 24px">
-                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-events" value="Event planning & logistics"> Event planning & logistics</label>
-                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-fundraising" value="Fundraising & budgeting"> Fundraising & budgeting</label>
-                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-comms" value="Communications & social media"> Communications & social media</label>
-                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-curriculum" value="Curriculum & education"> Curriculum & education</label>
-                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-arts" value="Arts & cultural programming"> Arts & cultural programming</label>
-                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-sports" value="Sports & recreation"> Sports & recreation</label>
-                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-outreach" value="Community outreach"> Community outreach</label>
-                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-tech" value="Technology & web"> Technology & web</label>
-                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-volunteer" value="Volunteer coordination"> Volunteer coordination</label>
+              <div style="columns:2;column-gap:24px;margin-top:8px">
+                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-events" value="Event planning & logistics"> Event planning & logistics</label></div>
+                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-fundraising" value="Fundraising & budgeting"> Fundraising & budgeting</label></div>
+                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-comms" value="Communications & social media"> Communications & social media</label></div>
+                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-curriculum" value="Curriculum & education"> Curriculum & education</label></div>
+                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-arts" value="Arts & cultural programming"> Arts & cultural programming</label></div>
+                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-sports" value="Sports & recreation"> Sports & recreation</label></div>
+                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-outreach" value="Community outreach"> Community outreach</label></div>
+                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-tech" value="Technology & web"> Technology & web</label></div>
+                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-volunteer" value="Volunteer coordination"> Volunteer coordination</label></div>
               </div>
               <div style="margin-top:10px">
                 <input type="text" id="exp-other" placeholder="Other expertise or interest…" style="width:100%;padding:8px 12px;border:1.5px solid var(--gray-mid);border-radius:5px;font-size:14px;font-family:'Source Sans 3',sans-serif">
@@ -1068,7 +1068,8 @@ function buildCatalog() {
 // ══════════════════════════════════════════════════════════════
 // ══════════════════════════════════════════════════════════════
 // FORM SUBMISSION — All forms post to the Apps Script Web App
-// Replace https://script.google.com/macros/s/AKfycbwGFXA7fBdBVLkS4NIefScNptg48y1cKWFAkfxWB_v4GqvbrOd9N4l_CCVOgMF_gIHeRg/exec with the URL from your deployment
+// ══════════════════════════════════════════════════════════════
+// FORM SUBMISSION — Posts to Apps Script Web App
 // ══════════════════════════════════════════════════════════════
 var WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwGFXA7fBdBVLkS4NIefScNptg48y1cKWFAkfxWB_v4GqvbrOd9N4l_CCVOgMF_gIHeRg/exec';
 
