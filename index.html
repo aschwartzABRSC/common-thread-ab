@@ -402,7 +402,9 @@ section+section{border-top:1px solid var(--gray-mid)}
     <section>
       <p class="sec-label">Browse by Category</p>
       <h2 class="sec-title">Find activities by type</h2>
-      <div id="catalog-by-category"><div class="cat-heading">🏫 All-School Events</div><div class="grid g2"><div class="act-card"><h4>Trunk or Treat</h4><div class="act-meta"><span>🏫 Douglas (Acton)</span><span>👥 All grades</span><span>🕐 Weekend</span><span>💰 Free</span></div><p>A Halloween related activity where families decorate their cars in the school parking lot, students from across the school, nearby neighborhoods or elsewhere…</p><div class="act-links"><a href="https://docs.google.com/document/d/1QbzTB35WoLTlluUR5ALvjpyskReLNDMN_Xa8iU6FDYI/edit?usp=drivesdk" target="_blank">📄 View Playbook</a><a href="https://drive.google.com/file/d/1D_hZ6-AAP1FbjZmX--mGBCMjEl6zR-Fh/view?usp=drivesdk" target="_blank" class="pdf">⬇ PDF</a></div></div></div></div>
+      <div id="catalog-by-category">
+        <div class="empty"><p>Activities will appear here as they are approved.</p><a onclick="showPage('submit')" class="btn btn-navy" style="font-size:13px;padding:9px 18px">Submit the first one →</a></div>
+      </div>
     </section>
     <section>
       <p class="sec-label">Browse by School</p>
@@ -654,16 +656,16 @@ section+section{border-top:1px solid var(--gray-mid)}
             <div class="form-group">
               <label>Areas of expertise or interest <span style="font-weight:400;color:#888">(select all that apply)</span></label>
               <p class="form-hint" style="margin-bottom:10px">These help us match you with the right working group.</p>
-              <div style="columns:2;column-gap:24px;margin-top:8px">
-                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-events" value="Event planning & logistics"> Event planning & logistics</label></div>
-                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-fundraising" value="Fundraising & budgeting"> Fundraising & budgeting</label></div>
-                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-comms" value="Communications & social media"> Communications & social media</label></div>
-                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-curriculum" value="Curriculum & education"> Curriculum & education</label></div>
-                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-arts" value="Arts & cultural programming"> Arts & cultural programming</label></div>
-                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-sports" value="Sports & recreation"> Sports & recreation</label></div>
-                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-outreach" value="Community outreach"> Community outreach</label></div>
-                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-tech" value="Technology & web"> Technology & web</label></div>
-                <div style="break-inside:avoid;margin-bottom:8px"><label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--gray-text)"><input type="checkbox" id="exp-volunteer" value="Volunteer coordination"> Volunteer coordination</label></div>
+              <div style="margin-top:8px">
+                <label style="font-weight:400;display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:var(--gray-text);padding:6px 0;border-bottom:1px solid var(--gray-mid)"><input type="checkbox" id="exp-events" value="Event planning &amp; logistics"> Event planning &amp; logistics</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:var(--gray-text);padding:6px 0;border-bottom:1px solid var(--gray-mid)"><input type="checkbox" id="exp-fundraising" value="Fundraising &amp; budgeting"> Fundraising &amp; budgeting</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:var(--gray-text);padding:6px 0;border-bottom:1px solid var(--gray-mid)"><input type="checkbox" id="exp-comms" value="Communications &amp; social media"> Communications &amp; social media</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:var(--gray-text);padding:6px 0;border-bottom:1px solid var(--gray-mid)"><input type="checkbox" id="exp-curriculum" value="Curriculum &amp; education"> Curriculum &amp; education</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:var(--gray-text);padding:6px 0;border-bottom:1px solid var(--gray-mid)"><input type="checkbox" id="exp-arts" value="Arts &amp; cultural programming"> Arts &amp; cultural programming</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:var(--gray-text);padding:6px 0;border-bottom:1px solid var(--gray-mid)"><input type="checkbox" id="exp-sports" value="Sports &amp; recreation"> Sports &amp; recreation</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:var(--gray-text);padding:6px 0;border-bottom:1px solid var(--gray-mid)"><input type="checkbox" id="exp-outreach" value="Community outreach"> Community outreach</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:var(--gray-text);padding:6px 0;border-bottom:1px solid var(--gray-mid)"><input type="checkbox" id="exp-tech" value="Technology &amp; web"> Technology &amp; web</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:var(--gray-text);padding:6px 0"><input type="checkbox" id="exp-volunteer" value="Volunteer coordination"> Volunteer coordination</label>
               </div>
               <div style="margin-top:10px">
                 <input type="text" id="exp-other" placeholder="Other expertise or interest…" style="width:100%;padding:8px 12px;border:1.5px solid var(--gray-mid);border-radius:5px;font-size:14px;font-family:'Source Sans 3',sans-serif">
@@ -985,19 +987,8 @@ window.addEventListener('load', function() {
 // CATALOG — Populated by GitHubUpdater script
 // ══════════════════════════════════════════════════════════════
 var APPROVED_ACTIVITIES = [
-  {
-    name: "Trunk or Treat",
-    schools: "Douglas (Acton)",
-    format: "All-school event",
-    gradeLevels: "All grades",
-    timing: "Weekend",
-    cost: "Free",
-    description: "A Halloween related activity where families decorate their cars in the school parking lot, students from across the school, nearby neighborhoods or elsewhere attend in their Halloween costumes and go from car to car playing games and collecting candy ",
-    howToRun: "Define a planning group. \nSet a date. \nDefine the roles and responsibilities for the event. \nRoles: music, candy, decorations, parking, communication, event supervision, photographer\nCoordinate with the school on date/time\nSet a Theme if necessary\nSend information home to students\nPost on School facebook pages\nBuy candy for participants \nDay of : \nSet parking spaces\nChalk each parking space with a number\nHelp the cars that participating to park in their correct space\nDistribute candy to each of the cars\nHave the kids enjoy the event\nHold a vote for which car had the best decorations\nAnnounce the winner of the contest for best decorations\nCleanup the event\nPost pictures and publicly thank everyone\n\n",
-    contacts: "This has been a PTO run event with event-specific volunteers",
-    docUrl: "https://docs.google.com/document/d/1QbzTB35WoLTlluUR5ALvjpyskReLNDMN_Xa8iU6FDYI/edit?usp=drivesdk",
-    pdfUrl: "https://drive.google.com/file/d/1D_hZ6-AAP1FbjZmX--mGBCMjEl6zR-Fh/view?usp=drivesdk"
-  }
+  // Populated automatically by the GitHubUpdater Apps Script
+  // PLACEHOLDER_ACTIVITIES
 ];
 
 var CATEGORIES = [
