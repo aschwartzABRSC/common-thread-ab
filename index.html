@@ -620,6 +620,24 @@ section+section{border-top:1px solid var(--gray-mid)}
                 <input type="email" id="jf-email" placeholder="you@example.com">
               </div>
             </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone <span style="font-weight:400;color:#888">(optional)</span></label>
+                <input type="tel" id="jf-phone" placeholder="617-555-1234">
+              </div>
+              <div class="form-group">
+                <label>Your role in the community <span class="req">*</span></label>
+                <select id="jf-role">
+                  <option value="">Select a role…</option>
+                  <option>Parent / Caregiver</option>
+                  <option>PTO / PTSO member</option>
+                  <option>Teacher</option>
+                  <option>School administrator</option>
+                  <option>District staff</option>
+                  <option>Community member</option>
+                </select>
+              </div>
+            </div>
             <div class="form-group">
               <label>School affiliation <span class="req">*</span></label>
               <select id="jf-school">
@@ -632,21 +650,55 @@ section+section{border-top:1px solid var(--gray-mid)}
                 <option>District-wide / No specific school</option>
               </select>
             </div>
+
             <div class="form-group">
-              <label>Your role in the community <span class="req">*</span></label>
-              <select id="jf-role">
-                <option value="">Select a role…</option>
-                <option>Parent / Caregiver</option>
-                <option>PTO / PTSO member</option>
-                <option>Teacher</option>
-                <option>School administrator</option>
-                <option>District staff</option>
-                <option>Community member</option>
-              </select>
+              <label>Areas of expertise or interest <span style="font-weight:400;color:#888">(select all that apply)</span></label>
+              <p class="form-hint" style="margin-bottom:10px">These help us match you with the right working group.</p>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="exp-events" value="Event planning & logistics"> Event planning & logistics</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="exp-fundraising" value="Fundraising & budgeting"> Fundraising & budgeting</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="exp-comms" value="Communications & social media"> Communications & social media</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="exp-curriculum" value="Curriculum & education"> Curriculum & education</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="exp-arts" value="Arts & cultural programming"> Arts & cultural programming</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="exp-sports" value="Sports & recreation"> Sports & recreation</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="exp-outreach" value="Community outreach"> Community outreach</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="exp-tech" value="Technology & web"> Technology & web</label>
+                <label style="font-weight:400;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="exp-volunteer" value="Volunteer coordination"> Volunteer coordination</label>
+              </div>
+              <div style="margin-top:10px">
+                <input type="text" id="exp-other" placeholder="Other expertise or interest…" style="width:100%;padding:8px 12px;border:1.5px solid var(--gray-mid);border-radius:5px;font-size:14px;font-family:'Source Sans 3',sans-serif">
+              </div>
             </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Availability for meetings</label>
+                <select id="jf-availability">
+                  <option value="">Select…</option>
+                  <option>Weekday evenings</option>
+                  <option>Weekend mornings</option>
+                  <option>Weekend afternoons</option>
+                  <option>Flexible</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Hours per month comfortable committing</label>
+                <select id="jf-hours">
+                  <option value="">Select…</option>
+                  <option>1–2 hours</option>
+                  <option>3–5 hours</option>
+                  <option>5+ hours</option>
+                </select>
+              </div>
+            </div>
+
             <div class="form-group">
               <label>Why do you want to join Common Thread? <span class="req">*</span></label>
               <textarea id="jf-why" placeholder="Tell us a bit about your interest and what you'd bring to the Review Team…"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Any activities or traditions you'd love to see preserved? <span style="font-weight:400;color:#888">(optional)</span></label>
+              <textarea id="jf-traditions" placeholder="Share any school traditions or activities that are meaningful to you…" style="min-height:80px"></textarea>
             </div>
             <p id="jf-error" style="color:#e53935;font-size:13px;margin-bottom:12px;display:none"></p>
             <button class="btn btn-green" onclick="submitJoinForm()" style="width:100%;justify-content:center;padding:14px;font-size:15px">Submit My Application →</button>
@@ -1014,9 +1066,41 @@ function buildCatalog() {
 // ══════════════════════════════════════════════════════════════
 // FORM HANDLERS — replace URLs with real Google Form prefill URLs
 // ══════════════════════════════════════════════════════════════
-var QUICK_SUBMIT_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdG1qF5EVz1GgVybASXc6Gns0Vblr6qGWQv_k0XmrfhLr_uGg/viewform';
-var JOIN_FORM_URL    = 'https://docs.google.com/forms/d/e/1FAIpQLSdnmNWblMOZy7gg3tTgRTJyEOHwbUTFeeWpNhhU_ygqiFKm1Q/viewform';
-var CONTACT_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfE5Bf_9siQP86EteX3tprxYt6fl3Xtn67fk2TWW_8i3rUZmw/viewform';
+// ══════════════════════════════════════════════════════════════
+// FORM SUBMISSION — All forms post to the Apps Script Web App
+// Replace https://script.google.com/macros/s/AKfycbwGFXA7fBdBVLkS4NIefScNptg48y1cKWFAkfxWB_v4GqvbrOd9N4l_CCVOgMF_gIHeRg/exec with the URL from your deployment
+// ══════════════════════════════════════════════════════════════
+var WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwGFXA7fBdBVLkS4NIefScNptg48y1cKWFAkfxWB_v4GqvbrOd9N4l_CCVOgMF_gIHeRg/exec';
+
+function postToWebApp(payload, successId, formWrapId, errorId) {
+  var btn = event.target;
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+
+  fetch(WEBAPP_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.success) {
+      document.getElementById(formWrapId).style.display = 'none';
+      document.getElementById(successId).style.display = 'block';
+    } else {
+      document.getElementById(errorId).textContent = 'Something went wrong. Please try again.';
+      document.getElementById(errorId).style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Try again →';
+    }
+  })
+  .catch(function() {
+    document.getElementById(errorId).textContent = 'Could not connect. Please check your internet connection and try again.';
+    document.getElementById(errorId).style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Try again →';
+  });
+}
 
 function submitQuickForm() {
   var name  = document.getElementById('sf-name').value.trim();
@@ -1024,6 +1108,7 @@ function submitQuickForm() {
   var idea  = document.getElementById('sf-idea').value.trim();
   var desc  = document.getElementById('sf-desc').value.trim();
   var err   = document.getElementById('sf-error');
+
   if (!name || !email || !idea || !desc) {
     err.textContent = 'Please fill in all required fields.';
     err.style.display = 'block'; return;
@@ -1033,60 +1118,54 @@ function submitQuickForm() {
     err.style.display = 'block'; return;
   }
   err.style.display = 'none';
-  var school = document.getElementById('sf-school').value;
-  var role   = document.getElementById('sf-role').value;
-  var extra  = document.getElementById('sf-extra').value.trim();
 
-  // Silent POST to Google Forms using URLSearchParams
-  var params = new URLSearchParams();
-  params.append('entry.378498888',  name);
-  params.append('entry.539345980',  email);
-  params.append('entry.2058940213', idea);
-  params.append('entry.709309062',  desc);
-  params.append('entry.988096260',  school);
-  params.append('entry.2131462685', role);
-
-  fetch('https://docs.google.com/forms/d/e/1FAIpQLSdG1qF5EVz1GgVybASXc6Gns0Vblr6qGWQv_k0XmrfhLr_uGg/formResponse', {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: params.toString()
-  });
-
-  document.getElementById('submit-form-wrap').style.display = 'none';
-  document.getElementById('sf-success').style.display = 'block';
+  postToWebApp({
+    type:        'idea',
+    name:        name,
+    email:       email,
+    ideaName:    idea,
+    description: desc,
+    school:      document.getElementById('sf-school').value,
+    role:        document.getElementById('sf-role').value,
+    extra:       document.getElementById('sf-extra').value.trim()
+  }, 'sf-success', 'submit-form-wrap', 'sf-error');
 }
 
 function submitJoinForm() {
-  var name   = document.getElementById('jf-name').value.trim();
-  var email  = document.getElementById('jf-email').value.trim();
+  var name  = document.getElementById('jf-name').value.trim();
+  var email = document.getElementById('jf-email').value.trim();
   var school = document.getElementById('jf-school').value;
-  var role   = document.getElementById('jf-role').value;
-  var why    = document.getElementById('jf-why').value.trim();
-  var err    = document.getElementById('jf-error');
+  var role  = document.getElementById('jf-role').value;
+  var why   = document.getElementById('jf-why').value.trim();
+  var err   = document.getElementById('jf-error');
+
   if (!name || !email || !school || !role || !why) {
     err.textContent = 'Please fill in all required fields.';
     err.style.display = 'block'; return;
   }
   err.style.display = 'none';
 
-  // Silent POST to Google Forms using URLSearchParams
-  var params = new URLSearchParams();
-  params.append('entry.1479781875', name);
-  params.append('entry.1445287771', email);
-  params.append('entry.1673614873', school);
-  params.append('entry.1745824216', role);
-  params.append('entry.168527434',  why);
-
-  fetch('https://docs.google.com/forms/d/e/1FAIpQLSdnmNWblMOZy7gg3tTgRTJyEOHwbUTFeeWpNhhU_ygqiFKm1Q/formResponse', {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: params.toString()
+  // Collect expertise checkboxes
+  var expertise = [];
+  ['events','fundraising','comms','curriculum','arts','sports','outreach','tech','volunteer'].forEach(function(id) {
+    var cb = document.getElementById('exp-' + id);
+    if (cb && cb.checked) expertise.push(cb.value);
   });
 
-  document.getElementById('join-form-wrap').style.display = 'none';
-  document.getElementById('jf-success').style.display = 'block';
+  postToWebApp({
+    type:           'membership',
+    name:           name,
+    email:          email,
+    phone:          document.getElementById('jf-phone').value.trim(),
+    school:         school,
+    role:           role,
+    expertise:      expertise,
+    expertiseOther: document.getElementById('exp-other').value.trim(),
+    availability:   document.getElementById('jf-availability').value,
+    hoursPerMonth:  document.getElementById('jf-hours').value,
+    whyJoin:        why,
+    traditions:     document.getElementById('jf-traditions').value.trim()
+  }, 'jf-success', 'join-form-wrap', 'jf-error');
 }
 
 function submitContactForm() {
@@ -1095,29 +1174,22 @@ function submitContactForm() {
   var subject = document.getElementById('cf-subject').value;
   var message = document.getElementById('cf-message').value.trim();
   var err     = document.getElementById('cf-error');
+
   if (!name || !email || !subject || !message) {
     err.textContent = 'Please fill in all required fields.';
     err.style.display = 'block'; return;
   }
   err.style.display = 'none';
 
-  // Silent POST to Google Forms using URLSearchParams
-  var params = new URLSearchParams();
-  params.append('entry.1020664144', name);
-  params.append('entry.10074585',   email);
-  params.append('entry.1351788342', subject);
-  params.append('entry.1903482707', message);
-
-  fetch('https://docs.google.com/forms/d/e/1FAIpQLSfE5Bf_9siQP86EteX3tprxYt6fl3Xtn67fk2TWW_8i3rUZmw/formResponse', {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: params.toString()
-  });
-
-  document.getElementById('contact-form-wrap').style.display = 'none';
-  document.getElementById('cf-success').style.display = 'block';
+  postToWebApp({
+    type:    'contact',
+    name:    name,
+    email:   email,
+    subject: subject,
+    message: message
+  }, 'cf-success', 'contact-form-wrap', 'cf-error');
 }
+
 
 
 // ══════════════════════════════════════════════════════════════
