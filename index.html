@@ -556,6 +556,30 @@ section+section{border-top:1px solid var(--gray-mid)}
   <div><h3>Interested in joining?</h3><p>We welcome representatives from every AB school community. Roles are open and participation is flexible.</p></div>
   <a onclick="showPage('join')" class="btn btn-gold">Apply to Join →</a>
 </div>
+<div class="member-group">
+  <div class="member-group-title">Core Team</div>
+  <div class="member-grid">
+    <div class="member-card">
+      <div class="m-name">Andrew Schwartz</div>
+      <div class="m-role">Co-Chair</div>
+      <div class="m-affil">ABRSD School Committee</div>
+    </div>
+    <div class="member-card">
+      <div class="m-name">Liz Fowlks</div>
+      <div class="m-role">Co-Chair</div>
+      <div class="m-affil">ABRSD School Committee</div>
+    </div>
+    <div class="member-card">
+      <div class="m-name">Jennifer Faber</div>
+      <div class="m-role">District Sponsor</div>
+      <div class="m-affil">ABRSD Director of Access and Engagement</div>
+    </div>
+  </div>
+</div>
+<div class="banner-cta">
+  <div><h3>Interested in joining?</h3><p>We welcome representatives from every AB school community. Roles are open and participation is flexible.</p></div>
+  <a onclick="showPage('join')" class="btn btn-gold">Apply to Join →</a>
+</div>
 <!-- PLACEHOLDER_MEMBERS -->
 <div class="member-group">
   <div class="member-group-title">Core Team</div>
@@ -984,7 +1008,359 @@ window.addEventListener('load', function() {
 // ══════════════════════════════════════════════════════════════
 // CATALOG — Populated by GitHubUpdater script
 // ══════════════════════════════════════════════════════════════
-var APPROVED_ACTIVITIES = [];
+var APPROVED_ACTIVITIES = [
+  {
+    name: "Trunk or Treat / Fall Gathering",
+    schools: "Douglas, Merriam, Conant, McCarthy-Towne, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Fall — October",
+    cost: "Free to families; PTO funds candy/decorations",
+    description: "An annual fall community celebration where families decorate their car trunks in a school parking lot and students trick-or-treat from car to car in their Halloween costumes. One of the most beloved and well-attended events of the school year, bringing together students, families, and the broader community in a safe, festive environment. Known as Trunk or Treat at Douglas and Fall Social at other schools.",
+    howToRun: "1. Form a planning committee in September\n2. Book the date and reserve the parking lot with facilities\n3. Send sign-up forms to families 6 weeks in advance for trunk decorators and candy donors\n4. Assign volunteer roles: music, candy distribution, decorations, parking, communications, supervision, photography\n5. Set a theme (optional but increases participation)\n6. Send information home and post on school Facebook pages\n7. Day of: chalk parking space numbers, help cars to their spots, distribute candy to each car\n8. Run a best-decoration contest — announce winner at event\n9. Post photos and thank all participants publicly",
+    contacts: "PTO Planning Committee; School Facilities Coordinator for lot access; Parent volunteers (4-6 minimum)",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Fall Festival / Harvest Fest / McHearty Party",
+    schools: "Conant, McCarthy-Towne, Gates, Blanchard, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Fall — September or October",
+    cost: "Low cost to families; PTO-funded",
+    description: "A fall community gathering that celebrates the season and builds school spirit. Formats vary by school: Conant runs a faculty-created games and activities event with PTO fall photos and snacks; McCarthy-Towne hosts the McHearty Party as a Harvest Fest; Gates holds a Fall Family Picnic with a Scholastic Book Fair. All versions share the goal of welcoming families back to school in a festive, low-pressure community setting.",
+    howToRun: "1. Set date in late September or early October\n2. Choose format: outdoor picnic, carnival-style games, or structured festival\n3. Recruit faculty to run activity stations (Conant model) or PTO volunteers\n4. Arrange food — donations from local businesses or PTO-funded snacks\n5. Optional: pair with Book Fair for additional fundraising\n6. Set up photo station for fall-themed family photos\n7. Promote through school newsletter and class parents 3-4 weeks in advance\n8. Day of: set up 30 minutes early, assign volunteer roles, capture photos for social media",
+    contacts: "PTO events committee; local food donors; Scholastic Book Fair rep (optional)",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Back-to-School Picnic / Welcome Event",
+    schools: "Merriam, Gates, Conant, Boardwalk, Parker-Damon",
+    format: "Family engagement program",
+    gradeLevels: "All grades",
+    timing: "Fall — first weeks of school",
+    cost: "Free to families; PTO-funded",
+    description: "An early-year outdoor gathering that welcomes families back to school and helps new families connect with the community. Typically held in the school yard or a nearby park. Often paired with a Book Fair or spirit wear sale. The goal is to reduce first-week anxiety, build community connections, and set a welcoming tone for the year.",
+    howToRun: "1. Schedule within first 2-3 weeks of school\n2. Choose a rain date and communicate it in the invitation\n3. Arrange simple refreshments — pizza, popsicles, or potluck\n4. Set up yard games or free play areas\n5. Create a welcome table for new families with a school guide and contact info\n6. Invite teachers and staff to attend informally\n7. Take group photos for the school newsletter",
+    contacts: "PTO welcome committee; school administration for grounds access",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Yahoo / Boohoo Event (Kindergarten First Day)",
+    schools: "Douglas, Conant, Merriam, Blanchard, Boardwalk, Parker-Damon",
+    format: "Family engagement program",
+    gradeLevels: "Kindergarten families",
+    timing: "Fall — first day of school",
+    cost: "Free; light refreshments provided by PTO",
+    description: "A beloved tradition on the first day of Kindergarten where parents gather right after drop-off to celebrate (Yahoo!) or commiserate (Boohoo!) together. Held on school grounds immediately after children enter the building. Creates an instant sense of community among new Kindergarten families and gives emotional support to parents experiencing a significant milestone. One of the most warmly remembered traditions across AB schools.",
+    howToRun: "1. Coordinate timing with the principal — immediately after Kindergarten drop-off\n2. Set up a simple refreshment table: coffee, muffins, tissues\n3. Have PTO board members and returning parents available to welcome and introduce themselves\n4. Keep it informal — 30-45 minutes maximum\n5. Share photos (of adults only) on school social media\n6. Provide a brief handout with key school contacts and upcoming events",
+    contacts: "PTO Kindergarten welcome coordinator; school administration",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Kindergarten Summer Welcome Playdates",
+    schools: "Merriam, Conant, Douglas, Blanchard, McCarthy-Towne, Gates, Boardwalk, Parker-Damon",
+    format: "Family engagement program",
+    gradeLevels: "Incoming Kindergarten families",
+    timing: "Summer — July or August",
+    cost: "Free; held at public parks",
+    description: "Informal outdoor playdates organized by the PTO for incoming Kindergarten families before school starts. Typically held at a local park or school playground. Allows children to meet future classmates and parents to connect with other Kindergarten families in a relaxed, unstructured setting. Significantly reduces first-day anxiety for both children and parents.",
+    howToRun: "1. Coordinate with the school to get the incoming Kindergarten family list (with permission)\n2. Schedule 2-3 playdates across the summer at different times to maximize attendance\n3. Choose accessible public parks or the school playground\n4. Send invitations via the school or PTO email list\n5. Keep it completely unstructured — families self-organize\n6. Have a PTO representative present to answer questions\n7. Create a simple class parent group (GroupMe, WhatsApp) to continue connection",
+    contacts: "PTO Kindergarten coordinator; school administration for family contact list sharing",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Literacy Week",
+    schools: "Merriam, Conant, Douglas, Blanchard, McCarthy-Towne, Gates, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Winter or Spring — typically February or March",
+    cost: "Low cost; PTO-funded for materials and refreshments",
+    description: "A full week of literacy-centered activities celebrating reading and books across the whole school. Universally run across all AB schools with school-specific variations. Core elements include: author visits, mystery readers in classrooms, character dress-up day, book swap, and Hygge Day (cozy reading with hot cocoa, dim lights, and lanterns). Often paired with the March Madness Book Bracket tournament. One of the most cherished academic traditions across the district.",
+    howToRun: "1. Plan 6-8 weeks in advance — book author visit early as slots fill quickly\n2. Schedule each day of the week with a different theme or activity\n3. Coordinate mystery reader sign-ups with classroom teachers\n4. For Hygge Day: dim classroom lights, bring in battery lanterns, PTO provides hot cocoa and cozy props\n5. Book swap: ask families to donate 1-2 books; set up tables by grade level for swapping\n6. Character dress-up day: promote through classroom parents 2 weeks ahead\n7. Announce Book Bracket selections and run daily voting throughout the week",
+    contacts: "PTO literacy committee; classroom teachers; local authors (Silver Unicorn Bookstore is a frequent partner); school librarian",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Book Buddies / Reading Buddies / STARR Buddies",
+    schools: "Merriam, Conant, Douglas, Blanchard, Gates, Boardwalk, Parker-Damon",
+    format: "Classroom-based program",
+    gradeLevels: "All grades (upper-lower grade partnerships)",
+    timing: "Year-round — monthly or bi-weekly sessions",
+    cost: "Free; no materials cost",
+    description: "A structured cross-grade reading partnership program where upper-grade students (typically 4th-6th grade) are paired with lower-grade students (K-2nd) for regular read-aloud and literacy support sessions. Known as Book Buddies at Douglas, Reading Buddies at Merriam and McCarthy-Towne, and STARR Buddies at Blanchard. One of the most universally valued programs across AB schools — builds reading confidence, leadership skills, and cross-grade community.",
+    howToRun: "1. Coordinate between at least two classroom teachers across grade levels\n2. Schedule regular sessions — ideally bi-weekly, 30-45 minutes\n3. Orient older students: how to choose appropriate books, how to read aloud expressively, how to ask comprehension questions\n4. Pair students thoughtfully — consider reading level and personality match\n5. Provide a small book library for buddy pairs to choose from\n6. Document with photos and share with families\n7. Celebrate at end of year with a buddy breakfast or shared reading event",
+    contacts: "Classroom teachers (upper and lower grade coordinators); school librarian",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "March Madness Book Bracket / Tournament of Books",
+    schools: "Merriam, Conant, Blanchard, Gates, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Spring — March",
+    cost: "Free to families",
+    description: "A school-wide book tournament modeled on March Madness brackets where students read nominated books and vote for their favorites in head-to-head matchups over several weeks. Known as Tournament of Books at Blanchard and March Madness at Merriam and Conant. Dramatically increases voluntary reading and generates school-wide excitement and discussion about books. Often run in parallel with or as part of Literacy Week.",
+    howToRun: "1. Select 8-16 books for the bracket — ideally in November or December so reading can begin\n2. Share the bracket with all classrooms and families\n3. Ensure books are available in the school library and public library\n4. Run weekly voting — classroom teachers tally votes or use an online poll\n5. Post the updated bracket in a visible location (hallway display, school newsletter)\n6. Announce the winner at a school assembly or through morning announcements\n7. Optional: pair with author visit for the winning book",
+    contacts: "School librarian (primary coordinator); classroom teachers; PTO for promotion and display materials",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Scoops & Stories (West Acton Evening)",
+    schools: "Merriam, Conant, Blanchard, Boardwalk, Parker-Damon",
+    format: "Family engagement program",
+    gradeLevels: "All grades",
+    timing: "Spring — typically May",
+    cost: "Free event; ice cream and food at personal cost",
+    description: "A beloved community evening in West Acton where teachers do read-alouds at Silver Unicorn Books, families get ice cream at West Side Creamery, and the evening ends at a local gathering spot. Known as Scoops and Stories at Conant and Blanchard, and Family Night Out at other schools. Partners three beloved local businesses with the school community for a warm, low-key evening that celebrates literacy and neighborhood connection.",
+    howToRun: "1. Contact Silver Unicorn Books (West Acton) to confirm a date — they host the read-aloud portion\n2. Coordinate with West Side Creamery for the evening\n3. Recruit 2-4 teachers to do informal read-alouds at the bookstore\n4. Promote 3-4 weeks in advance through school newsletter and class parents\n5. Keep it unstructured — families arrive and depart as they wish\n6. Encourage families to purchase books at Silver Unicorn to support the partnership\n7. Share photos on school social media",
+    contacts: "Silver Unicorn Books (West Acton); West Side Creamery; classroom teachers who volunteer to read aloud; PTO events coordinator",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Topics Fair (6th Grade Capstone)",
+    schools: "Merriam, Boardwalk, Parker-Damon",
+    format: "Grade-level initiative",
+    gradeLevels: "6th grade",
+    timing: "Spring — May or June",
+    cost: "Low cost; materials funded by school or PTO grants",
+    description: "A year-long academic capstone experience for 6th graders where each student selects a topic of personal interest and works on it throughout the year — completing various projects and assignments culminating in a large interactive project fair for families and the community. Described by Merriam parents as \"the educational capstone of the elementary experience.\" Showcases student agency, deep learning, and presentation skills. Strongly recommended as a district-wide experience for all 6th graders.",
+    howToRun: "1. Students select topics in September or October — teacher approval required\n2. Assign milestone check-ins throughout the year (research, outline, first draft, visual component)\n3. Students complete 3-5 different project formats on their topic across the year\n4. Schedule the fair in May — open to all families and lower-grade classes\n5. Students set up display boards with their projects and present to visitors\n6. Teachers and parent volunteers circulate and ask questions\n7. Celebrate completion at the end of year ceremony",
+    contacts: "Classroom teachers (primary coordinators); school librarian; PTO for fair-day logistics and refreshments",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Art Show / Celebrate the Arts Night",
+    schools: "Conant, Douglas, Gates, Blanchard, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Spring — April or May",
+    cost: "Free to families; minimal PTO cost for display materials",
+    description: "An evening event where the school is transformed into an art gallery displaying student artwork from all grade levels. Typically includes live performances by the school chorus or instrumental ensembles. Families walk through the school to find and celebrate their children's work. Known as Arts Showcase at Conant and Blanchard, Art Show at Douglas, and Celebrate the Arts Night at Gates. Consistently one of the most attended and emotionally resonant events of the year.",
+    howToRun: "1. Coordinate with the art teacher to plan the gallery display 4-6 weeks in advance\n2. Collect and mat artwork from all grade levels\n3. Arrange artwork by classroom or grade level throughout the school\n4. Coordinate with music teacher for live performances during the event\n5. Recruit parent volunteers to help hang and label artwork\n6. Set up refreshments — often simple: lemonade and cookies\n7. At Gates: parents help scan art into Artsonia platform for digital sharing\n8. Document the evening with photos and share with families",
+    contacts: "Art teacher (primary coordinator); music teacher; parent volunteers; PTO for refreshments and promotion",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Festival of Cultures / World Heritage Event",
+    schools: "Douglas, Conant, Blanchard, McCarthy-Towne, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Winter or Spring — February through April",
+    cost: "Free; families may contribute food or materials",
+    description: "A school-wide celebration of the diverse cultural backgrounds represented in the school community. Families share food, music, crafts, clothing, and stories from their cultures. Students learn about countries and traditions from around the world through interactive displays and performances. Known as Festival of Cultures at Douglas and Conant, World Heritage Event at McCarthy-Towne. One of the most inclusive and community-building events in the AB calendar.",
+    howToRun: "1. Send sign-up forms to families 6-8 weeks in advance asking who wants to represent their culture\n2. Assign each participating family a display table\n3. Provide simple guidelines: display materials, food (if desired), cultural items, photos\n4. Recruit a student emcee or teacher to introduce each cultural station\n5. Optional: invite cultural performers — music, dance, storytelling\n6. Arrange food tables separately from display tables for food safety\n7. Photograph all displays and create a school newsletter feature afterward",
+    contacts: "PTO cultural events coordinator; school administration; parent cultural representatives",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Talent Show",
+    schools: "Douglas, Gates, Conant, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "K-3 and/or 4-6 grade bands",
+    timing: "Spring — March or April",
+    cost: "Free to participate; low ticket cost optional for fundraising",
+    description: "A student talent showcase where children perform individually or in groups — singing, dancing, playing instruments, doing comedy, magic, gymnastics, and more. Douglas runs separate shows for K-3 and 4-6. Gates runs a combined talent show. One of the most exciting student-driven events of the year — builds confidence, celebrates diverse abilities, and fills the auditorium.",
+    howToRun: "1. Announce auditions 6-8 weeks before the show\n2. Hold auditions with a small teacher/parent panel — keep them supportive, not competitive\n3. Limit acts to 2-3 minutes each\n4. Schedule 2-3 rehearsals in the weeks before the show\n5. Assign backstage parent volunteers for each act\n6. Set up lighting and sound — coordinate with facilities\n7. Run a separate show for K-3 and 4-6 if enrollment is large\n8. Film the show and make available to families afterward",
+    contacts: "Music teacher or performing arts coordinator; parent volunteers for backstage; AV support from facilities",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Field Day / Fun Day / Polar Pride Day / Activity Day",
+    schools: "Merriam, Conant, Douglas, Blanchard, McCarthy-Towne, Gates, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Spring — May or June",
+    cost: "Free to families; PTO funds equipment and water",
+    description: "An annual outdoor celebration of physical activity, teamwork, and school spirit. One of the most universally beloved traditions across all AB schools. Known as Field Day at Merriam and Douglas, Polar Pride Day at Conant, Fun Day at McCarthy-Towne, and Activity Day at Gates. Typically involves station-based activities and games run by teachers, parent volunteers, and upper-grade student leaders. At Conant, 6th graders face teachers in special events.",
+    howToRun: "1. Book date in March — coordinate with PE teacher and principal\n2. Design station rotation: 8-12 activity stations for classes to rotate through\n3. Recruit parent volunteers for each station — 1-2 adults per station minimum\n4. Order or borrow equipment: water balloons, hula hoops, jump ropes, parachutes, etc.\n5. Set up water stations throughout the course\n6. Arrange a 6th grade vs. teachers challenge event (Conant tradition worth adopting broadly)\n7. Have a rain plan: reschedule date communicated in advance\n8. End with a school-wide assembly or ice cream celebration",
+    contacts: "PE teacher (primary coordinator); classroom teachers; parent volunteers; PTO for supplies and ice cream",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Fun Run / Walk & Roll / Mileage Club",
+    schools: "Douglas, McCarthy-Towne, Gates, Merriam, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Fall or Spring",
+    cost: "Free to participate; primary PTO fundraiser",
+    description: "A school-wide running or walking fundraiser where students collect pledges and complete laps around a course. One of the most popular and effective PTO fundraisers across AB schools. Known as Fun Run at Douglas, Walk & Roll at McCarthy-Towne, Merriam Milers as a before-school running club at Merriam, and as a Panther Pride kickoff event at Gates. Simultaneously promotes physical health and community fundraising.",
+    howToRun: "1. Choose format: pledge-based laps (Fun Run) or distance challenge\n2. Set fundraising goal and communicate to families 4 weeks in advance\n3. Set up online pledge collection (99Pledges or similar platform)\n4. Design the course — school field or parking lot loop\n5. Assign grade-level time slots across the day\n6. Recruit parent volunteers for lap counting, water stations, and cheering\n7. Provide each student a Popsicle or snack at finish\n8. Announce fundraising totals and celebrate top fundraisers",
+    contacts: "PTO fundraising committee; PE teacher; parent volunteers; 99Pledges or similar online platform",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "All-School Meetings / Assemblies",
+    schools: "Merriam, Conant, Gates, Blanchard, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Monthly — throughout the year",
+    cost: "Free",
+    description: "Regular whole-school gatherings that build community identity and belonging. Include student performances, school song sing-alongs, student council announcements, community celebrations, and recognition. Gates holds monthly all-school meetings with student council-driven Spirit Days. Conant's meetings include cultural belonging events and singalongs. Identified across all schools as a core tradition for building a unified school identity — especially important during district reorganization.",
+    howToRun: "1. Schedule monthly dates at the start of the year — protect them on the school calendar\n2. Rotate student groups to lead or perform at each meeting\n3. Include consistent elements: school song, community announcements, student recognition\n4. Student council leads Spirit Day themes and announcements at Gates\n5. Invite parents when student performances are featured\n6. Keep to 30-45 minutes maximum for attention and scheduling\n7. Document and share highlights in the school newsletter",
+    contacts: "Principal; student council advisor; music teacher; classroom teachers on rotation",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Student Council",
+    schools: "Conant, Gates, Boardwalk, Parker-Damon",
+    format: "Club or recurring group",
+    gradeLevels: "Grades 4-6",
+    timing: "Year-round — weekly or bi-weekly meetings",
+    cost: "Free",
+    description: "A student-elected leadership body that gives upper-grade students a voice in school culture and decision-making. At Gates, the student council drives monthly Spirit Days for the whole school. At Conant, student council organizes school-wide activities and community service initiatives. Builds leadership skills, civic responsibility, and a sense of student ownership over school culture.",
+    howToRun: "1. Hold elections in October — one or two representatives per classroom\n2. Establish a regular meeting schedule — weekly or bi-weekly after school\n3. Assign an advisor — typically a teacher or assistant principal\n4. Give council real responsibilities: Spirit Days, school improvement projects, community service\n5. Create a communication channel to share council decisions with the whole school\n6. End-of-year: recognize council members at a school assembly",
+    contacts: "Teacher advisor; principal for approval of initiatives; PTO for funding of council projects",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "6th Grade Moving Up / Graduation Traditions",
+    schools: "Merriam, Conant, Douglas, Blanchard, McCarthy-Towne, Gates, Boardwalk, Parker-Damon",
+    format: "Grade-level initiative",
+    gradeLevels: "6th grade",
+    timing: "Spring — June",
+    cost: "Low cost; PTO-funded for refreshments and gifts",
+    description: "A collection of end-of-year traditions celebrating 6th graders as they transition to middle school. Universal elements across all schools include: yearbook, moving up ceremony, clap-out by teachers and younger students, and class T-shirts. School-specific additions include: ice cream truck (McCarthy-Towne, Merriam, Douglas), 6th grade dance (Conant, Gates, Douglas), ski trip (Douglas), and special field trips. The clap-out — where the entire school lines the hallways to cheer departing 6th graders — is consistently named as one of the most emotional and memorable moments in AB elementary school life.",
+    howToRun: "1. Plan by March — coordinate with principal on ceremony format and date\n2. Order class T-shirts by April — all student names on the back\n3. Organize yearbook production — student editors with teacher oversight\n4. Schedule the clap-out: younger classes line hallways, 6th graders walk through\n5. Plan graduation ceremony: student speeches, awards, music performance\n6. Coordinate ice cream truck for last day\n7. Optional: 6th grade vs. teachers Field Day challenge\n8. Optional: dance or celebration party (student-voted theme, DJ)",
+    contacts: "Principal; 6th grade teachers; PTO 6th grade parent committee; yearbook coordinator; ice cream truck vendor",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "6th Grade Ski Trip",
+    schools: "Douglas, Boardwalk, Parker-Damon",
+    format: "Field trip or learning experience",
+    gradeLevels: "6th grade",
+    timing: "Winter — January or February",
+    cost: "Moderate cost per student; PTO may subsidize for equity",
+    description: "An overnight or day ski trip for 6th graders to a local mountain, typically held in January or February. At Douglas this is a Friday tradition after school gets out. A memorable capstone outdoor experience that builds class community and gives students an adventure to share before middle school.",
+    howToRun: "1. Book the mountain and transportation in October\n2. Send permission slips and payment collection 6 weeks in advance\n3. Arrange subsidy for families who cannot afford the cost — keep participation universal\n4. Arrange chaperones: 1 adult per 5-6 students minimum\n5. Communicate ski rental options to families\n6. Arrange ski/snowboard lessons for beginners\n7. Set clear behavioral expectations and buddy system\n8. Celebrate with a hot cocoa gathering at the end of the day",
+    contacts: "6th grade teachers; PTO for subsidy funding; transportation company; mountain resort contact",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Nature's Classroom / Merrowvista",
+    schools: "Conant, McCarthy-Towne, Boardwalk, Parker-Damon",
+    format: "Field trip or learning experience",
+    gradeLevels: "Grades 5-6",
+    timing: "Fall or Spring — multi-day",
+    cost: "Moderate cost; PTO may subsidize",
+    description: "A multi-day outdoor education experience at a residential nature camp. Conant sends 6th graders to Nature's Classroom with class T-shirts. McCarthy-Towne runs a 5th grade Merrowvista sleepover trip. Builds class community, introduces students to outdoor skills and environmental education, and creates lasting memories before the transition to middle school. Dependent on teacher volunteer availability.",
+    howToRun: "1. Book the program in the spring for the following school year\n2. Confirm teacher volunteer availability — program requires chaperones\n3. Send information home in September; collect permission and payment by October\n4. Arrange subsidy for families who cannot afford the cost\n5. Pack lists and preparation information sent home 2 weeks before\n6. Coordinate with the camp on curriculum integration\n7. Class T-shirts ordered with all names for the trip",
+    contacts: "6th grade classroom teachers; Nature's Classroom or Merrowvista program coordinators; PTO for subsidy and T-shirt funding",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Teacher & Staff Appreciation Week",
+    schools: "Merriam, Conant, Douglas, Blanchard, McCarthy-Towne, Gates, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "Staff-focused; family participation",
+    timing: "Spring — first week of May",
+    cost: "PTO-funded; typically $15-25 per staff member",
+    description: "A dedicated week of daily activities recognizing and celebrating all teachers and staff. Merriam has overhauled their approach to ensure every staff member — including specialists, custodians, and bus drivers — receives equivalent appreciation. McCarthy-Towne includes gift card roulette, bagel breakfasts, and a luncheon. Gates coordinates with JPTSO for a full program. Across all schools, staff consistently name appreciation events as among the most meaningful gestures from the PTO community. Note: Douglas specifically includes bus driver appreciation.",
+    howToRun: "1. Plan in March — budget per staff member across all roles\n2. Day 1: sweet treat or breakfast delivery to all staff rooms\n3. Day 2: personalized notes from students (can be done as classroom activity)\n4. Day 3: coffee truck or bagel breakfast\n5. Day 4: luncheon — catered or parent-made\n6. Day 5: gift (gift card, school supplies, or class contribution)\n7. Important equity note (Merriam model): ensure every staff member — not just classroom teachers — receives identical treatment\n8. Include custodians, paraprofessionals, nurses, secretaries, bus drivers, and all specialists",
+    contacts: "PTO staff appreciation committee; classroom parents for student note coordination; local restaurants for catering; coffee truck vendors",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "WooSox Game (Douglas)",
+    schools: "Douglas",
+    format: "Field trip or learning experience",
+    gradeLevels: "All grades (or grade-specific)",
+    timing: "Spring — May",
+    cost: "Moderate cost per student; group rate available",
+    description: "An end-of-year field trip to a Worcester Red Sox (WooSox) AAA baseball game at Polar Park in Worcester. A unique community outing that combines sports, community, and celebration as the school year winds down. A distinctive Douglas tradition that creates shared memories for the whole school.",
+    howToRun: "1. Contact WooSox group sales in January — group rates and availability fill quickly\n2. Select a weekday afternoon game for best pricing and availability\n3. Send permission slips and payment collection 6 weeks in advance\n4. Arrange transportation — school buses\n5. Coordinate chaperones: 1 adult per 8-10 students\n6. Assign seating sections by grade or class\n7. Purchase concessions vouchers for each student (optional but popular)\n8. Follow up with photos and memories in the school newsletter",
+    contacts: "PTO events coordinator; WooSox Group Sales; school transportation coordinator",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Canobie Lake Park Trip (Douglas)",
+    schools: "Douglas",
+    format: "Field trip or learning experience",
+    gradeLevels: "All grades",
+    timing: "Summer — Friday after school ends",
+    cost: "Admission cost per student; PTO may subsidize",
+    description: "A community outing to Canobie Lake Park in Salem, NH, held on the Friday after the last day of school. A joyful celebration of the end of the year that has become a beloved Douglas tradition. Brings families together in a fun, informal setting as a final shared memory before summer.",
+    howToRun: "1. Purchase group tickets in April — group rates and minimum headcounts apply\n2. Promote heavily in May and early June\n3. Arrange carpools or optional charter bus\n4. Coordinate chaperones\n5. Set a rain date or refund policy\n6. Provide a clear meeting point and schedule for the day",
+    contacts: "PTO events committee; Canobie Lake group sales",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Spelling Bee",
+    schools: "Gates, Conant, Boardwalk, Parker-Damon",
+    format: "Grade-level initiative",
+    gradeLevels: "Grades 4-6",
+    timing: "Fall — November (Gates registered with Scripps)",
+    cost: "Low cost; registration fee for Scripps program",
+    description: "A school-wide spelling competition culminating in a final bee. Gates runs a Scripps-registered Spelling Bee in November. A classic academic tradition that builds vocabulary, public speaking comfort, and healthy academic competition. Students in each classroom compete first, with winners advancing to the school-wide bee.",
+    howToRun: "1. Decide format: classroom bees to select representatives, then school-wide final\n2. Register with Scripps National Spelling Bee program (free, provides official word lists)\n3. Share word lists with families 4-6 weeks before classroom rounds\n4. Classroom rounds: teachers run in-class bees to select 1-2 representatives\n5. School final: held in the gymnasium or auditorium with parent audience\n6. Recruit a teacher to serve as official pronouncer\n7. Award ribbons or certificates to top finishers\n8. Celebrate all participants at a school assembly",
+    contacts: "Scripps National Spelling Bee program (free registration); classroom teachers; principal for scheduling gymnasium",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Veterans Day Ceremony",
+    schools: "Douglas, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Fall — November 11",
+    cost: "Free",
+    description: "A school-wide ceremony honoring veterans in November. Douglas holds this as a dedicated annual tradition. Typically includes student performances, invited veteran speakers from the community, a moment of silence, and patriotic music. Builds civic awareness, gratitude, and community connection across generations.",
+    howToRun: "1. Begin planning in October\n2. Reach out to local veterans organizations or parent/family veterans\n3. Invite 2-3 veteran speakers — brief 5-10 minute presentations\n4. Music teacher prepares patriotic songs with students\n5. Student council or 6th grade students serve as hosts\n6. Create a display of veteran photos or student artwork\n7. Hold a moment of silence at 11am if scheduling allows\n8. Send a follow-up thank-you from students to all veterans who attended",
+    contacts: "Principal; music teacher; local VFW or American Legion post; parent veterans in the school community",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Portfolio Breakfasts",
+    schools: "Conant, Boardwalk, Parker-Damon",
+    format: "Family engagement program",
+    gradeLevels: "All grades (each grade hosts once)",
+    timing: "Year-round — each grade hosts once per year",
+    cost: "Low cost; light breakfast provided by PTO",
+    description: "A student-led conference format where each grade level hosts families for a morning breakfast during which students share their work portfolios and discuss their learning and growth. Each grade hosts one breakfast per year. Conant runs these as a consistent tradition. Deeply meaningful for families and students — gives children practice articulating their own learning journey.",
+    howToRun: "1. Schedule each grade's breakfast across the year — rotate so no two grades conflict\n2. Students prepare portfolios 2-3 weeks in advance with teacher guidance\n3. Students practice their \"portfolio talk\" — what they're proud of, what they've learned, what they want to improve\n4. PTO arranges simple breakfast: muffins, juice, coffee for adults\n5. Set up classroom in stations — students lead their parents through their work\n6. 45-60 minute event before the school day starts\n7. Teachers circulate but students do the talking",
+    contacts: "Classroom teachers (primary coordinators); PTO for breakfast supplies",
+    docUrl: "",
+    pdfUrl: ""
+  },
+  {
+    name: "Giving Tree / Community Service Drives",
+    schools: "Gates, Blanchard, Boardwalk, Parker-Damon",
+    format: "All-school event",
+    gradeLevels: "All grades",
+    timing: "Year-round — various campaigns",
+    cost: "Family donations; no PTO cost",
+    description: "School-wide charitable giving initiatives throughout the year. Gates runs a Giving Tree initiative with the Acton-Boxborough Housing Authority (AHA) and provides classroom starting funds for teachers. Multiple schools run drives to support the AB Resource Center, food banks, and Household Goods. Builds a culture of community responsibility and generosity across all grade levels.",
+    howToRun: "1. Identify 2-3 annual causes — choose organizations with direct community connection\n2. For Giving Tree: partner with AHA or similar organization for a gift tag tree in December\n3. Create classroom collection boxes and a school-wide thermometer display\n4. Assign student council to promote and track progress\n5. Celebrate community generosity at a school assembly\n6. For teacher grants (Gates model): teachers submit applications to PTO for classroom supplies or books",
+    contacts: "PTO community service coordinator; AB Resource Center; AHA; Household Goods; classroom teachers",
+    docUrl: "",
+    pdfUrl: ""
+  }
+];
 
 var CATEGORIES = [
   { key: 'Club or recurring group',           label: 'Clubs & Recurring Groups',            icon: '🎭' },
